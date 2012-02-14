@@ -48,4 +48,14 @@ feature 'gerenciar cliente' do
    
 
   end
+
+
+    scenario 'excluir cliente' do #, :javascript => true  do
+    cliente = FactoryGirl.create(:cliente)
+
+    visit clientes_path
+    click_link 'Excluir'
+    Cliente.count.should == 0
+
+  end
 end
