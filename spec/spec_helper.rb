@@ -27,35 +27,35 @@ RSpec.configure do |config|
   # instead of true.
   config.before :each do
 
-+      if example.metadata[:javascript]
+      if example.metadata[:javascript]
 
-+        Capybara.server_port = 33333
+        Capybara.server_port = 33333
 
-+        Capybara.current_driver = :selenium
+        Capybara.current_driver = :selenium
 
-+      end
+      end
 
-+      if Capybara.current_driver == :rack_test
+      if Capybara.current_driver == :rack_test
 
-+        DatabaseCleaner.strategy = :transaction
+        DatabaseCleaner.strategy = :transaction
 
-+      else
+      else
 
-+        DatabaseCleaner.strategy = :truncation
+        DatabaseCleaner.strategy = :truncation
 
-+      end      
+      end      
 
-+      DatabaseCleaner.start
+      DatabaseCleaner.start
 
-+    end
+    end
 
-+    
+    
 
-+    config.after(:each) do
+    config.after(:each) do
 
-+      DatabaseCleaner.clean
+      DatabaseCleaner.clean
 
-+    end
+    end
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
