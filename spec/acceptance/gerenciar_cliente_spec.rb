@@ -26,4 +26,26 @@ feature 'gerenciar cliente' do
     page.should have_content 'Endereco: endereco text'
 
   end
+
+
+
+ scenario 'alterar cliente' do #, :javascript => true  do
+
+    cliente = FactoryGirl.create(:cliente)
+
+    visit edit_cliente_path(cliente)
+
+    fill_in 'Nome', :with => 'cliente alterado'
+    fill_in 'Telefone', :with => 'telefone alterado'
+    fill_in 'Endereco', :with => 'endereco alterado'
+
+        
+    click_button 'Salvar'
+
+    page.should have_content 'Nome: cliente alterado'
+    page.should have_content 'Telefone: telefone alterado'
+    page.should have_content 'Endereco: endereco alterado'       
+   
+
+  end
 end
