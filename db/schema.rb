@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120214124128) do
+ActiveRecord::Schema.define(:version => 20120228134747) do
+
+  create_table "carros", :force => true do |t|
+    t.string   "modelo"
+    t.string   "placa"
+    t.string   "ano"
+    t.integer  "cliente_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "carros", ["cliente_id"], :name => "index_carros_on_cliente_id"
 
   create_table "clientes", :force => true do |t|
     t.string   "nome"

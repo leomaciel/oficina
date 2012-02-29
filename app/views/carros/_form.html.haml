@@ -1,0 +1,7 @@
+= semantic_form_for(@carro) do |f|
+  
+  = f.input :modelo, :label => 'Modelo'
+  = f.input :ano, :label => 'Ano'
+  = f.input :placa, :label => 'Placa'
+  = f.input :cliente, :member_label => :nome, :label => 'Nome'
+  = f.submit 'Salvar'
