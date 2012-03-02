@@ -41,6 +41,16 @@ feature 'gerenciar carro' do
 
   end
 
+   scenario 'Excluir carro' do #, :javascript => true do
+
+    cliente = FactoryGirl.create(:cliente,:nome => 'cliente text')
+    carro = FactoryGirl.create(:carro, :cliente => cliente)
+
+    visit carros_path
+    click_link 'Excluir'
+
+end
+
   
 
  
