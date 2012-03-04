@@ -1,0 +1,27 @@
+<h1>Listing mecanicos</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Telefone</th>
+    <th>Especialidade</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mecanicos.each do |mecanico| %>
+  <tr>
+    <td><%= mecanico.nome %></td>
+    <td><%= mecanico.telefone %></td>
+    <td><%= mecanico.especialidade %></td>
+    <td><%= link_to 'Show', mecanico %></td>
+    <td><%= link_to 'Edit', edit_mecanico_path(mecanico) %></td>
+    <td><%= link_to 'Destroy', mecanico, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mecanico', new_mecanico_path %>

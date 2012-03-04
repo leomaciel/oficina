@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 
-feature 'gerenciar sercico' do
+feature 'gerenciar servico' do
 
   before :each do
 
