@@ -29,7 +29,7 @@ feature 'gerenciar sercico' do
   end
 
  
-scenario 'alterar servico' do #, :javascript => true do
+  scenario 'alterar servico' do #, :javascript => true do
 
     carro = FactoryGirl.create(:carro,:placa => 'placa text')
     servico = FactoryGirl.create(:servico, :carro => carro)
@@ -39,6 +39,19 @@ scenario 'alterar servico' do #, :javascript => true do
     preencher_e_verificar_servico
 
   end
+
+
+  scenario 'excluir servico' do #, :javascript => true do
+
+    carro = FactoryGirl.create(:carro,:placa => 'placa text')
+    servico = FactoryGirl.create(:servico, :carro => carro)
+    
+    visit servicos_path
+    click_link 'Excluir'
+
+  end
+
+
 
   def preencher_e_verificar_servico
 
