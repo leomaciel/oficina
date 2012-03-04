@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228134747) do
+ActiveRecord::Schema.define(:version => 20120302133754) do
 
   create_table "carros", :force => true do |t|
     t.string   "modelo"
@@ -31,5 +31,15 @@ ActiveRecord::Schema.define(:version => 20120228134747) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "servicos", :force => true do |t|
+    t.string   "data"
+    t.string   "valor"
+    t.integer  "carro_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "servicos", ["carro_id"], :name => "index_servicos_on_carro_id"
 
 end

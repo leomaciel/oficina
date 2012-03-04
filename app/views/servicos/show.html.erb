@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Data:</b>
+  <%= @servico.data %>
+</p>
+
+<p>
+  <b>Valor:</b>
+  <%= @servico.valor %>
+</p>
+
+<p>
+  <b>Placa:</b>
+  <%= @servico.carro.placa %>
+</p>
+
+
+<%= link_to 'Edit', edit_servico_path(@servico) %> |
+<%= link_to 'Back', servicos_path %>

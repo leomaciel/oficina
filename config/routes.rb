@@ -1,4 +1,6 @@
 Oficina::Application.routes.draw do
+  resources :servicos
+
   resources :carros
 
   resources :clientes
