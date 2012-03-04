@@ -12,17 +12,17 @@ feature 'gerenciar mecanico' do
   
 
   scenario 'incluir mecanico' do
-  visit new_cliente_path
+  visit new_mecanico_path
 
     fill_in 'Nome', :with => 'mecanico text'
     fill_in 'Telefone', :with => 'telefone text'
-
+    fill_in 'Especialidade', :with => 'especialidade text'
         	
     click_button 'Salvar'
 
     page.should have_content 'Nome: mecanico text'
     page.should have_content 'Telefone: telefone text'
-
+    page.should have_content 'Especialidade: especialidade text'
 
   end
 
@@ -45,5 +45,15 @@ feature 'gerenciar mecanico' do
 
 
 
-end
+  end
+
+
+  scenario 'excluir mecanico' do #, :javascript => true  do
+    mecanico = FactoryGirl.create(:mecanico)
+
+    visit mecanicos_path
+    click_link 'Excluir'
+    Mecanico.count.should == 0
+
+  end
 end
