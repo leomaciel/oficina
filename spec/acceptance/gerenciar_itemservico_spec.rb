@@ -46,6 +46,17 @@ feature 'gerenciar itemservico' do
 
   end
 
+  scenario 'excluir itemservico' do #, :javascript => true do
+
+    servico = FactoryGirl.create(:servico,:data => 'data text')
+    mecanico = FactoryGirl.create(:mecanico,:nome => 'mecanico text')
+    itemservico = FactoryGirl.create(:itemservico, :mecanico => mecanico, :servico =>servico)
+    
+    visit itemservicos_path
+    click_link 'Excluir'
+
+  end
+
 
 
   def preencher_e_verificar_itemservico
