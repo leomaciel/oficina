@@ -1,0 +1,29 @@
+<h1>Listing itemservicos</h1>
+
+<table>
+  <tr>
+    <th>Nomeitem</th>
+    <th>Precoitem</th>
+    <th>Mecanico</th>
+    <th>Servico</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @itemservicos.each do |itemservico| %>
+  <tr>
+    <td><%= itemservico.nomeitem %></td>
+    <td><%= itemservico.precoitem %></td>
+    <td><%= itemservico.mecanico %></td>
+    <td><%= itemservico.servico %></td>
+    <td><%= link_to 'Show', itemservico %></td>
+    <td><%= link_to 'Edit', edit_itemservico_path(itemservico) %></td>
+    <td><%= link_to 'Destroy', itemservico, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Itemservico', new_itemservico_path %>

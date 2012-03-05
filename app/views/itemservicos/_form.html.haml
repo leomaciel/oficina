@@ -1,0 +1,7 @@
+= semantic_form_for(@itemservico) do |f|
+  
+  = f.input :nomeitem, :label => 'Nomeitem'
+  = f.input :precoitem, :label => 'Precoitem'
+  = f.input :mecanico, :member_label => :nome, :label => 'Nome'
+  = f.input :servico, :member_label => :data, :label => 'Data'
+  = f.submit 'Salvar'

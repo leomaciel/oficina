@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nomeitem:</b>
+  <%= @itemservico.nomeitem %>
+</p>
+
+<p>
+  <b>Precoitem:</b>
+  <%= @itemservico.precoitem %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @itemservico.mecanico.nome %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @itemservico.servico.data %>
+</p>
+
+
+<%= link_to 'Edit', edit_itemservico_path(@itemservico) %> |
+<%= link_to 'Back', itemservicos_path %>
